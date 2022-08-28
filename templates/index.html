@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+  HOME PAGE
+{% endblock title %}
+
+{% block content %}
+  
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4"><center>Hava Durumu</center></h1>
+      <p class="lead"><center>Günlük Hava Durumunu Aşağıdaki Listeden Görebilirsiniz</center></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"> Şehir </th>
+          <th scope="col">Rüzgar Hızı</th>
+          <th scope="col">Nem</th>
+          <th scope="col">Derece</th>
+          <th scope="col">Açıklama</th>
+          <!-- <th scope="col">TEST</th> -->
+        </tr>
+      </thead>
+      <tbody>
+          {% for veri in veriler %} 
+              <tr>
+                  <td>{{ veri.sehir }}</td>
+                  <td>  {{ veri.wind_speed }} </td>
+                  <td>{{ veri.humidity }}</td>
+                  <td>  {{veri.temp}} </td>
+                  <td>{{ veri.description }}</td>
+                  <!-- <td><a class="btn btn-warning" href="#" role="button">Test</a></td> -->
+              </tr>
+
+          {% endfor %}
+      </tbody>
+    </table>
+  
+  </div>
+  
+
+{% endblock content %}
